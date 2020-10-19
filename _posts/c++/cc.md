@@ -3,7 +3,7 @@ layout: post
 title: cc
 date: 2020-10-19
 Author: 念书
-categories: Ma
+categories: 
 tags: [c++]
 comments: false
 ---
