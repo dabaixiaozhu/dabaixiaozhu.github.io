@@ -454,7 +454,7 @@
 <li>错误观点：无返回值是实现runnable接口，有返回值是实现callable接口，所以callable是新的实现线程的方式。</li>
 </ul>
 <p>其实都是实现了Runnable。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311233653.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312003033.png" alt></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CallableDemo</span> <span class="token keyword">implements</span> <span class="token class-name">Callable</span><span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -477,7 +477,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><p>也是实现了Runnable方法。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311233822.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312003041.png" alt></p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TimmerTaskDemo</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
