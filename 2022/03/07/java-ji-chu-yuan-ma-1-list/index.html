@@ -28,7 +28,12 @@ ArrayList基本原理及优缺点数组的长度是固定的，比如为100，�
     <link rel="stylesheet" type="text/css" href="/css/matery.css">
     <link rel="stylesheet" type="text/css" href="/css/my.css">
     <style type="text/css">
-        
+        code[class*="language-"],
+            pre[class*="language-"] {
+                white-space: pre !important;
+            }
+
+            
     </style>
 
     <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
@@ -196,7 +201,7 @@ ArrayList基本原理及优缺点数组的长度是固定的，比如为100，�
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/28.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -546,7 +551,7 @@ E <span class="token function">elementData</span><span class="token punctuation"
     <span class="token comment" spellcheck="true">// 完成老数组到新数组的拷贝</span>
     elementData <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">copyOf</span><span class="token punctuation">(</span>elementData<span class="token punctuation">,</span> newCapacity<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h1><h2 id="基本原理以及优缺点"><a href="#基本原理以及优缺点" class="headerlink" title="基本原理以及优缺点"></a>基本原理以及优缺点</h2><p>LinkedList，底层是基于双向链表数据结构来实现的。<br><img src="https://img-blog.csdnimg.cn/831ecfb1ddeb4a3f96b42efa1629193d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAZGFiYWl4aWFvemh1,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
+<h1 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h1><h2 id="基本原理以及优缺点"><a href="#基本原理以及优缺点" class="headerlink" title="基本原理以及优缺点"></a>基本原理以及优缺点</h2><p>LinkedList，底层是基于双向链表数据结构来实现的。<br><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311234028.png" alt></p>
 <p>优点：</p>
 <ol>
 <li>大量的插入时不需要像ArrayList那样去扩容，不断的把新的节点挂到链表上就可以了。所以适合频繁的插入和删除操作。</li>
@@ -886,37 +891,38 @@ E <span class="token function">unlink</span><span class="token punctuation">(</s
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/03/07/java-ji-chu-yuan-ma-1-list/">
+                <a href="/2022/03/08/java-ji-chu-yuan-ma-2-map/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="java基础源码1：List">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="java基础源码2：Map">
                         
-                        <span class="card-title">java基础源码1：List</span>
+                        <span class="card-title">java基础源码2：Map</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            集合的分类首先来看一下集合的整体分类。Collection和Set中文都可以翻译成集合。但是从Java编程角度，Collection应该被翻译成容器，Set翻译成集合。
-ArrayList基本原理及优缺点数组的长度是固定的，比如为100，当
+                            HashMap数据结构JDK 1.8后hashmap的基本的数据结构。
+获取key的hash值，再对数组的长度进行取模，根据取模的结果，将key-value放在数组中。
+如果某两个key，对应的hash值一样（哈希冲突）：
+
+在JDK 1.
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-03-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-03-08
+                        </span>
                         <span class="publish-author">
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -939,7 +945,7 @@ ArrayList基本原理及优缺点数组的长度是固定的，比如为100，�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="java基础源码1：List">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="java基础源码1：List">
                         
                         <span class="card-title">java基础源码1：List</span>
                     </div>

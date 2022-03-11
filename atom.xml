@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.linzeyuzheng.cn/"/>
-  <updated>2022-03-08T07:12:42.374Z</updated>
+  <updated>2022-03-11T15:03:00.081Z</updated>
   <id>https://www.linzeyuzheng.cn/</id>
   
   <author>
@@ -17,11 +17,166 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>设计模式4：行为型</title>
+    <link href="https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-4-xing-wei-xing/"/>
+    <id>https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-4-xing-wei-xing/</id>
+    <published>2022-03-11T12:58:34.000Z</published>
+    <updated>2022-03-11T15:03:00.081Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://www.linzeyuzheng.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式3：结构型</title>
+    <link href="https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-3-jie-gou-xing/"/>
+    <id>https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-3-jie-gou-xing/</id>
+    <published>2022-03-11T12:58:20.000Z</published>
+    <updated>2022-03-11T15:02:52.905Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://www.linzeyuzheng.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式2：创建型</title>
+    <link href="https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-2-chuang-jian-xing/"/>
+    <id>https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-2-chuang-jian-xing/</id>
+    <published>2022-03-11T12:58:04.000Z</published>
+    <updated>2022-03-11T16:00:52.412Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;单例模式&quot;&gt;&lt;a href=&quot;#单例模式&quot; class=&quot;headerlink&quot; title=&quot;单例模式&quot;&gt;&lt;/a&gt;单例模式&lt;/h1&gt;&lt;h2 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://www.linzeyuzheng.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式1：概述</title>
+    <link href="https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-1-gai-shu/"/>
+    <id>https://www.linzeyuzheng.cn/2022/03/11/she-ji-mo-shi-1-gai-shu/</id>
+    <published>2022-03-11T10:29:34.000Z</published>
+    <updated>2022-03-11T15:59:41.975Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;UML类图&quot;&gt;&lt;a href=&quot;#UML类图&quot; class=&quot;headerlink&quot; title=&quot;UML类图&quot;&gt;&lt;/a&gt;UML类图&lt;/h1&gt;&lt;p&gt;直接拿一个例子进行说明：&lt;/p&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="https://www.linzeyuzheng.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java多线程-基础1：实现多线程</title>
+    <link href="https://www.linzeyuzheng.cn/2022/03/11/java-duo-xian-cheng-ji-chu-1-shi-xian-duo-xian-cheng/"/>
+    <id>https://www.linzeyuzheng.cn/2022/03/11/java-duo-xian-cheng-ji-chu-1-shi-xian-duo-xian-cheng/</id>
+    <published>2022-03-11T09:09:48.000Z</published>
+    <updated>2022-03-11T15:38:35.885Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="多线程" scheme="https://www.linzeyuzheng.cn/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+      <category term="多线程-基础" scheme="https://www.linzeyuzheng.cn/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java基础源码3：set和iterator</title>
+    <link href="https://www.linzeyuzheng.cn/2022/03/11/java-ji-chu-yuan-ma-3-set-he-iterator/"/>
+    <id>https://www.linzeyuzheng.cn/2022/03/11/java-ji-chu-yuan-ma-3-set-he-iterator/</id>
+    <published>2022-03-11T08:56:52.000Z</published>
+    <updated>2022-03-11T15:51:33.116Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HashSet&quot;&gt;&lt;a href=&quot;#HashSet&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java基础源码" scheme="https://www.linzeyuzheng.cn/tags/java%E5%9F%BA%E7%A1%80%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java基础源码2：Map</title>
+    <link href="https://www.linzeyuzheng.cn/2022/03/08/java-ji-chu-yuan-ma-2-map/"/>
+    <id>https://www.linzeyuzheng.cn/2022/03/08/java-ji-chu-yuan-ma-2-map/</id>
+    <published>2022-03-08T13:22:26.000Z</published>
+    <updated>2022-03-11T15:50:23.347Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;HashMap&quot;&gt;&lt;a href=&quot;#HashMap&quot; class=&quot;headerlink&quot; title=&quot;HashMap&quot;&gt;&lt;/a&gt;HashMap&lt;/h1&gt;&lt;h2 id=&quot;数据结构&quot;&gt;&lt;a href=&quot;#数据结构&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java基础源码" scheme="https://www.linzeyuzheng.cn/tags/java%E5%9F%BA%E7%A1%80%E6%BA%90%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>java基础源码1：List</title>
     <link href="https://www.linzeyuzheng.cn/2022/03/07/java-ji-chu-yuan-ma-1-list/"/>
     <id>https://www.linzeyuzheng.cn/2022/03/07/java-ji-chu-yuan-ma-1-list/</id>
     <published>2022-03-07T08:22:02.000Z</published>
-    <updated>2022-03-08T07:12:42.374Z</updated>
+    <updated>2022-03-11T15:40:58.215Z</updated>
     
     <summary type="html">
     
