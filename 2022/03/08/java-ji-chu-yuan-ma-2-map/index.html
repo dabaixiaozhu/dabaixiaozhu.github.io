@@ -486,29 +486,29 @@
     <span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token punctuation">(</span>n <span class="token operator">>=</span> MAXIMUM_CAPACITY<span class="token punctuation">)</span> <span class="token operator">?</span> MAXIMUM_CAPACITY <span class="token operator">:</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="位移的思想"><a href="#位移的思想" class="headerlink" title="位移的思想"></a>位移的思想</h5><p>2的整数幂用二进制表示都是最高有效位为1，其余全是0，比如十进制8和32，下图只用了一个字节示意。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312003916592.png" alt="image-20220312003916592"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312005948.png" alt></p>
 <p>举例一个过程图：</p>
 <p>初始值：选取任意int类型数字，下图x表示不确定0或者1.</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312003928927.png" alt="image-20220312003928927"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010007.png" alt></p>
 <p>目的是将所有的x变为1。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312003940382.png" alt="image-20220312003940382"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010022.png" alt></p>
 <p>最后+1，就能进位得到2的整数幂。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312003951419.png" alt="image-20220312003951419"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010038.png" alt></p>
 <p>右移一位+或运算：有两位变成了1。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004002224.png" alt="image-20220312004002224"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010055.png" alt></p>
 <p>右移二位+或运算：有四位变成了1。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004016411.png" alt="image-20220312004016411"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010112.png" alt></p>
 <p>右移四位再或运算：有八位变成了1。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004029363.png" alt="image-20220312004029363"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010144.png" alt></p>
 <p>右移八位再或运算：有十六位变成了1。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004045402.png" alt="image-20220312004045402"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010225.png" alt></p>
 <p>右移十六位再或运算：注意这里不是三十二位全变，而是最高位后面的全变1。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004100340.png" alt="image-20220312004100340"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010241.png" alt></p>
 <p>结果+1：</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004110528.png" alt="image-20220312004110528"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010255.png" alt></p>
 <h5 id="初始容量-1"><a href="#初始容量-1" class="headerlink" title="初始容量-1"></a><strong>初始容量-1</strong></h5><p>是为了避免给定容量已经是8,16这样2的幂时，不减1直接移位会导致得到的结果比预期大。</p>
 <p>比如预期16得到应该是16，直接移位的话会得到32。</p>
-<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004120704.png" alt="image-20220312004120704"></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312010313.png" alt></p>
 <h5 id="最后一行"><a href="#最后一行" class="headerlink" title="最后一行"></a>最后一行</h5><p>最后一行是两个三目运算符，其中之一操作是n+1，很容易理解。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">return</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token punctuation">(</span>n <span class="token operator">>=</span> MAXIMUM_CAPACITY<span class="token punctuation">)</span> <span class="token operator">?</span> MAXIMUM_CAPACITY <span class="token operator">:</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>这个方法之所以高效，是因为移位运算和或运算都属于比较底层的操作，代码的数量不会比最终的指令数多，也就是通过几个简单操作实现了目的。</p>
