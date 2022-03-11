@@ -373,7 +373,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h1><p>直接拿一个例子进行说明：</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235220.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004741.png" alt></p>
 <p>第一行，斜体代表抽象类；Interface会<code>&lt;&lt;interface&gt;&gt;</code>表示</p>
 <p>第二格：表示类的属性，前面符号表示作用于，冒号后面表示类型</p>
 <ul>
@@ -396,25 +396,25 @@
 </li>
 </ul>
 <p>有一个表示比较特殊，特此记录一下，有默认值的final属性：</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235237.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004757.png" alt></p>
 <h1 id="6种常见关系"><a href="#6种常见关系" class="headerlink" title="6种常见关系"></a>6种常见关系</h1><h2 id="1-依赖关系"><a href="#1-依赖关系" class="headerlink" title="1 依赖关系"></a>1 依赖关系</h2><p>它是一种临时的关联，比如A类中某个方法参数是B类。</p>
 <p>虚线+简单箭头，从使用类指向被依赖的类，比如人会用手机打电话。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235305.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004816.png" alt></p>
 <h2 id="2-关联关系"><a href="#2-关联关系" class="headerlink" title="2 关联关系"></a>2 关联关系</h2><p>表示两个类之间是有关系的。</p>
 <p>实线+简单箭头，可以是单线或者双向的，比如学生跟老师的关系。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235753.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004830.png" alt></p>
 <h2 id="3-聚合关系"><a href="#3-聚合关系" class="headerlink" title="3 聚合关系"></a>3 聚合关系</h2><p>这种关系就更强了，<code>has a</code>，是整体和局部的关系，整体里包含了局部，局部脱离整体也能正常存在。</p>
 <p>空心菱形+实线，比如学校包含了多个老师，老师可以脱离学校而存在，就从老师指向学校。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235814.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004845.png" alt></p>
 <h2 id="4-组合关系"><a href="#4-组合关系" class="headerlink" title="4 组合关系"></a>4 组合关系</h2><p>这种关系更强，<code>contains a</code>的关系，整体和局部的关系，但是局部无法脱离整体而存在。</p>
 <p>实心菱形+实线，比如头和嘴的关系，嘴无法脱离头而存在，从嘴指向头。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235847.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004900.png" alt></p>
 <h2 id="5-继承关系"><a href="#5-继承关系" class="headerlink" title="5 继承关系"></a>5 继承关系</h2><p>耦合度最大的一种关系，就是平时使用的extends。</p>
 <p>实线+空心箭头，由子类指向父类。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235907.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004917.png" alt></p>
 <h2 id="6-实现关系"><a href="#6-实现关系" class="headerlink" title="6 实现关系"></a>6 实现关系</h2><p>就是平时使用的接口及其实现类。</p>
 <p>虚线+空心箭头，实现类指向接口。</p>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235926.png" alt></p>
+<p><img src="../../../../../AppData/Roaming/Typora/typora-user-images/image-20220312004943008.png" alt="image-20220312004943008"></p>
 <h1 id="七大原则"><a href="#七大原则" class="headerlink" title="七大原则"></a>七大原则</h1><table>
 <thead>
 <tr>

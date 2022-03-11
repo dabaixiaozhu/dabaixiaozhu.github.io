@@ -429,7 +429,7 @@ HashSet是乱序，不会按照插入的内容排序。">
             <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ConcurrentModificationException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="https://raw.githubusercontent.com/dabaixiaozhu/picb/main/20220311235114.png" alt></p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312004640.png" alt></p>
 <p>java集合包下的类，都是非线程安全的，所以都设计了针对并发修改集合的问题，都有fail fast机制，基于modCount来实现。</p>
 <h1 id="fail-safe"><a href="#fail-safe" class="headerlink" title="fail-safe"></a>fail-safe</h1><p>表示的是失败安全，遍历的是复制出来的老数组。</p>
 <p>比如CopyOnWriteArrayList。</p>
