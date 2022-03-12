@@ -352,14 +352,14 @@ instance是sta">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    868
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    8 分
                 </div>
                 
                 
@@ -453,17 +453,165 @@ instance是sta">
 <li>spring中的应用</li>
 </ol>
 <p>Spring 的单例 bean 实例的创建，是通过代码自己控制的，单例 bean 实例保存在一个 ConcurrentHashMap 中，而不是上述单例模式的典型实现方式。</p>
-<h2 id="项目中的使用"><a href="#项目中的使用" class="headerlink" title="项目中的使用"></a>项目中的使用</h2><p>创建一个白名单list，这个list每次启动后就不会变的，初始化时就直接进行赋值。</p>
-<p>其余的线程都是通过访问这个list的内容来判断权限。</p>
-<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><h2 id="目的-1"><a href="#目的-1" class="headerlink" title="目的"></a>目的</h2><h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><p>后续直接上类图了。</p>
+<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><h2 id="目的-1"><a href="#目的-1" class="headerlink" title="目的"></a>目的</h2><p>当一个接口有多个实现时，不需要自己去new不同的对象。</p>
+<p>创建一个工厂，通过switch或者if，根据入参的不同创建不同的对象。</p>
+<h2 id="包含的角色"><a href="#包含的角色" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>简单工厂（SimpleFactory）：是简单工厂模式的核心，负责实现创建所有实例的内部逻辑。工厂类的创建产品类的方法可以被外界直接调用，创建所需的产品对象。</li>
+<li>抽象产品（Product）：是简单工厂创建的所有对象的父类，负责描述所有实例共有的公共接口。</li>
+<li>具体产品（ConcreteProduct）：是简单工厂模式的创建目标。</li>
+</ol>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><p>后续直接上类图了。</p>
 <p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312005031.png" alt></p>
 <h2 id="开源中的使用-1"><a href="#开源中的使用-1" class="headerlink" title="开源中的使用"></a>开源中的使用</h2><ol>
 <li>JDK中的使用</li>
 </ol>
-<p>看</p>
-<pre class="line-numbers language-java"><code class="language-java">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h1 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h1><h2 id="目的-2"><a href="#目的-2" class="headerlink" title="目的"></a>目的</h2><h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><h2 id="开源中的使用-2"><a href="#开源中的使用-2" class="headerlink" title="开源中的使用"></a>开源中的使用</h2><h1 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h1><h2 id="目的-3"><a href="#目的-3" class="headerlink" title="目的"></a>目的</h2><h2 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h2><h2 id="开源中的使用-3"><a href="#开源中的使用-3" class="headerlink" title="开源中的使用"></a>开源中的使用</h2>
+<p>Calendar  中创建方法 <code>createCalendar()</code></p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    Calendar<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// Calendar</span>
+<span class="token keyword">public</span> <span class="token keyword">static</span> Calendar <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">createCalendar</span><span class="token punctuation">(</span>TimeZone<span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> Locale<span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span>Locale<span class="token punctuation">.</span>Category<span class="token punctuation">.</span>FORMAT<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">private</span> <span class="token keyword">static</span> Calendar <span class="token function">createCalendar</span><span class="token punctuation">(</span>TimeZone zone<span class="token punctuation">,</span>
+                                       Locale aLocale<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    CalendarProvider provider <span class="token operator">=</span>
+        LocaleProviderAdapter<span class="token punctuation">.</span><span class="token function">getAdapter</span><span class="token punctuation">(</span>CalendarProvider<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span>
+                             <span class="token punctuation">.</span><span class="token function">getCalendarProvider</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>provider <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> provider<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span>zone<span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IllegalArgumentException</span> iae<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    Calendar cal <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 通过if来确定返回的对象</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>aLocale<span class="token punctuation">.</span><span class="token function">hasExtensions</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String caltype <span class="token operator">=</span> aLocale<span class="token punctuation">.</span><span class="token function">getUnicodeLocaleType</span><span class="token punctuation">(</span><span class="token string">"ca"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>caltype <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">switch</span> <span class="token punctuation">(</span>caltype<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token string">"buddhist"</span><span class="token operator">:</span>
+            cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BuddhistCalendar</span><span class="token punctuation">(</span>zone<span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">"japanese"</span><span class="token operator">:</span>
+                cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JapaneseImperialCalendar</span><span class="token punctuation">(</span>zone<span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token keyword">case</span> <span class="token string">"gregory"</span><span class="token operator">:</span>
+                cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GregorianCalendar</span><span class="token punctuation">(</span>zone<span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 通过if来确定返回的对象</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cal <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>aLocale<span class="token punctuation">.</span><span class="token function">getLanguage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"th"</span> <span class="token operator">&amp;&amp;</span> aLocale<span class="token punctuation">.</span><span class="token function">getCountry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"TH"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BuddhistCalendar</span><span class="token punctuation">(</span>zone<span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>aLocale<span class="token punctuation">.</span><span class="token function">getVariant</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"JP"</span> <span class="token operator">&amp;&amp;</span> aLocale<span class="token punctuation">.</span><span class="token function">getLanguage</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"ja"</span>
+                   <span class="token operator">&amp;&amp;</span> aLocale<span class="token punctuation">.</span><span class="token function">getCountry</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">"JP"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JapaneseImperialCalendar</span><span class="token punctuation">(</span>zone<span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            cal <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GregorianCalendar</span><span class="token punctuation">(</span>zone<span class="token punctuation">,</span> aLocale<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> cal<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h1><h2 id="目的-2"><a href="#目的-2" class="headerlink" title="目的"></a>目的</h2><p>抽象工厂写死公共逻辑，工厂方法会把公共逻辑抽出来到一个抽象类中，每个工厂特殊的逻辑再自己进行实现，每个工厂对应一类产品的生成。</p>
+<p>缺点就是类比较多，且只能生产一种产品（用抽象工厂解决）。</p>
+<h2 id="包含的角色-1"><a href="#包含的角色-1" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>抽象工厂（Abstract Factory）：提供了创建产品的接口/抽象类，调用者通过它访问具体工厂的工厂方法 newProduct() 来创建产品。</li>
+<li>具体工厂（ConcreteFactory）：主要是实现抽象工厂中的抽象方法，完成具体产品的创建。</li>
+<li>抽象产品（Product）：定义了产品的规范，描述了产品的主要特性和功能。</li>
+<li>具体产品（ConcreteProduct）：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间一一对应。</li>
+</ol>
+<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><p>就是将简单工厂模式，模板方法模式结合了起来。</p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312135307.png" alt></p>
+<h2 id="开源中的使用-2"><a href="#开源中的使用-2" class="headerlink" title="开源中的使用"></a>开源中的使用</h2><ol>
+<li>在Logback源码汇总的应用，见注解</li>
+</ol>
+<ul>
+<li>抽象工厂：LogFactory</li>
+<li>具体工厂：LoggerLogFactory、LogStreamLogFactory </li>
+<li>抽象产品：Log，Log中的log()方法写上公共的逻辑</li>
+<li>具体产品：LoggerLog、LogStreamLog</li>
+</ul>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 抽象产品</span>
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Log</span> <span class="token punctuation">{</span>
+
+    <span class="token comment" spellcheck="true">// 特殊的逻辑</span>
+    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span>Level var1<span class="token punctuation">,</span> String var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 抽象工厂</span>
+    <span class="token keyword">private</span> <span class="token keyword">interface</span> <span class="token class-name">LogFactory</span> <span class="token punctuation">{</span>
+        Log <span class="token function">createLog</span><span class="token punctuation">(</span>String var1<span class="token punctuation">,</span> String var2<span class="token punctuation">,</span> Level var3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 工厂的实现1</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">LoggerLogFactory</span> <span class="token keyword">implements</span> <span class="token class-name">Log<span class="token punctuation">.</span>LogFactory</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> Log <span class="token function">createLog</span><span class="token punctuation">(</span>String var1<span class="token punctuation">,</span> String var2<span class="token punctuation">,</span> Level var3<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Logger var4 <span class="token operator">=</span> Logger<span class="token punctuation">.</span><span class="token function">getLogger</span><span class="token punctuation">(</span>var1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Log<span class="token punctuation">.</span>LoggerLog</span><span class="token punctuation">(</span>var4<span class="token punctuation">,</span> var3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 工厂的实现1</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">LogStreamLogFactory</span> <span class="token keyword">implements</span> <span class="token class-name">Log<span class="token punctuation">.</span>LogFactory</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> Log <span class="token function">createLog</span><span class="token punctuation">(</span>String var1<span class="token punctuation">,</span> String var2<span class="token punctuation">,</span> Level var3<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            LogStream var4 <span class="token operator">=</span> null<span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>var2 <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                var4 <span class="token operator">=</span> LogStream<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Log<span class="token punctuation">.</span>LogStreamLog</span><span class="token punctuation">(</span>var4<span class="token punctuation">,</span> var3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 具体产品1</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">LoggerLog</span> <span class="token keyword">extends</span> <span class="token class-name">Log</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span>Level var1<span class="token punctuation">,</span> String var2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isLoggable</span><span class="token punctuation">(</span>var1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                String<span class="token punctuation">[</span><span class="token punctuation">]</span> var3 <span class="token operator">=</span> Log<span class="token punctuation">.</span><span class="token function">getSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>logger<span class="token punctuation">.</span><span class="token function">logp</span><span class="token punctuation">(</span>var1<span class="token punctuation">,</span> var3<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> var3<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 具体产品2</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">LogStreamLog</span> <span class="token keyword">extends</span> <span class="token class-name">Log</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">log</span><span class="token punctuation">(</span>Level var1<span class="token punctuation">,</span> String var2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">isLoggable</span><span class="token punctuation">(</span>var1<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                String<span class="token punctuation">[</span><span class="token punctuation">]</span> var3 <span class="token operator">=</span> Log<span class="token punctuation">.</span><span class="token function">getSource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span>stream<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">unqualifiedName</span><span class="token punctuation">(</span>var3<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">"."</span> <span class="token operator">+</span> var3<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">": "</span> <span class="token operator">+</span> var2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h1><h2 id="产品族的概念"><a href="#产品族的概念" class="headerlink" title="产品族的概念"></a>产品族的概念</h2><p>同种类称为同等级：工厂方法模式只考虑生产同等级的产品。</p>
+<p>抽象工厂模式将考虑多等级产品的生产，将同一个具体工厂所生产的位于不同等级的一组产品称为一个产品族，图 中所示的是海尔工厂和 TCL 工厂所生产的电视机与空调对应的关系图。</p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312160336.png" alt></p>
+<h2 id="目的-3"><a href="#目的-3" class="headerlink" title="目的"></a>目的</h2><p>一个工厂可以生产同一个产品族内的不同产品等级。</p>
+<h2 id="包含的角色-2"><a href="#包含的角色-2" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>抽象工厂：提供了创建产品的接口，它包含多个创建产品的方法 newProduct()，可以创建多个不同等级的产品。</li>
+<li>具体工厂：主要是实现抽象工厂中的多个抽象方法，完成具体产品的创建。</li>
+<li>抽象产品：定义了产品的规范，描述了产品的主要特性和功能，抽象工厂模式有多个抽象产品。</li>
+<li>具体产品：实现了抽象产品角色所定义的接口，由具体工厂来创建，它同具体工厂之间是多对一的关系。</li>
+</ol>
+<h2 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h2><p>通过具体的工厂，能够创造出不同的产品。</p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/70248f67-b789-4226-83c5-f655a56ed122.png" alt></p>
+<h1 id="构造器模式"><a href="#构造器模式" class="headerlink" title="构造器模式"></a>构造器模式</h1><h2 id="目的-4"><a href="#目的-4" class="headerlink" title="目的"></a>目的</h2><p>通过不断返回Builder，设置属性值，从而创建新的对象。</p>
+<h2 id="包含的角色-3"><a href="#包含的角色-3" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>产品角色（Product）：它是包含多个组成部件的复杂对象，由具体建造者来创建其各个零部件。</li>
+<li>抽象建造者（Builder）：它是一个包含创建产品各个子部件的抽象方法的接口，通常还包含一个返回复杂产品的方法 getResult()。</li>
+<li>具体建造者(Concrete Builder）：实现 Builder 接口，完成复杂产品的各个部件的具体创建方法。</li>
+<li>指挥者（Director）：它调用建造者对象中的部件构造与装配方法完成复杂对象的创建，在指挥者中不涉及具体产品的信息。</li>
+</ol>
+<h2 id="代码实现-4"><a href="#代码实现-4" class="headerlink" title="代码实现"></a>代码实现</h2><p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312163229.png" alt></p>
+
             </div>
             <hr />
 
@@ -555,7 +703,10 @@ instance是sta">
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            享元模式目的从工厂的Map中，获取生成过的对象，减少生产对象的开销。
+获取到的对象，对于不同的场景，可能会有些许不同，所以在执行方法时，会输入非享元对象，执行特殊的操作。
+包含的角色
+抽象享元角色：是所有的具体享元类的基类，为具体享元规范需
                         
                     </div>
                     <div class="publish-info">

@@ -8,7 +8,15 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="设计模式4：行为型 | 大白小猪的博客">
+    <meta name="description" content="模板方法模式目的将抽象的逻辑抽取出来，由子类来实现特殊的计算逻辑。
+可以喝抽象工厂一起使用。
+包含的角色
+抽象模板（Abstract Class）
+
+
+模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。
+
+基本方法：是整个算法中的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -346,14 +354,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    602
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -364,7 +372,48 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>将抽象的逻辑抽取出来，由子类来实现特殊的计算逻辑。</p>
+<p>可以喝抽象工厂一起使用。</p>
+<h2 id="包含的角色"><a href="#包含的角色" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>抽象模板（Abstract Class）</li>
+</ol>
+<ul>
+<li><p>模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。</p>
+</li>
+<li><p>基本方法：是整个算法中的一个步骤，包含以下几种类型。</p>
+<ul>
+<li>抽象方法：在抽象类中声明，由具体子类实现。</li>
+</ul>
+</li>
+<li><p>具体方法：在抽象类中已经实现，在具体子类中可以继承或重写它。</p>
+</li>
+<li><p>钩子方法：在抽象类中已经实现，包括用于判断的逻辑方法和需要子类重写的空方法两种。</p>
+</li>
+</ul>
+<ol start="2">
+<li>具体实现（Concrete Class）</li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312154605.png" alt></p>
+<h1 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h1><h2 id="目的-1"><a href="#目的-1" class="headerlink" title="目的"></a>目的</h2><p>解决if过多的问题。</p>
+<h2 id="包含的角色-1"><a href="#包含的角色-1" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>抽象策略类：定义了一个公共接口，各种不同的算法以不同的方式实现这个接口，环境角色使用这个接口调用不同的算法，一般使用接口或抽象类实现。</li>
+<li>具体策略类：实现了抽象策略定义的接口，提供具体的算法实现。</li>
+<li>策略工厂类：给客户端返回策略。</li>
+</ol>
+<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><p>结合简单工厂，就是把if中的具体一大串逻辑放入对应的实现类，改为返回一个对应的实现类，再执行实现类中的对应方法。</p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/8600f883-4c41-4c7d-a49b-3b5e83b9302d.png" alt></p>
+<p>也可以通过Map来实现。</p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/20220312194841.png" alt></p>
+<h1 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h1><h2 id="目的-2"><a href="#目的-2" class="headerlink" title="目的"></a>目的</h2><p>判断条件成功了，再进入下一个Handler，将请求做成一条链。</p>
+<p>可以减少<code>if...else...</code></p>
+<h2 id="包含的角色-2"><a href="#包含的角色-2" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>抽象处理者角色：定义一个处理请求的接口，包含抽象处理方法和一个后继连接。</li>
+<li>具体处理者角色：实现抽象处理者的处理方法，判断能否处理本次请求，如果可以处理请求则处理，否则将该请求转给它的后继者。</li>
+<li>客户类角色：创建处理链，并向链头的具体处理者对象提交请求，它不关心处理细节和请求的传递过程。</li>
+</ol>
+<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><p>先创建一个个的handler子类，重写父类的execute()方法，一般这个方法会先进行逻辑判断，然后看看next是不是为null，不为null就再执行下一个handler。</p>
+<p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/9ab0fa2f-5408-4d68-93a9-51f6964ca833.png" alt></p>
+
             </div>
             <hr />
 
@@ -457,7 +506,15 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            模板方法模式目的将抽象的逻辑抽取出来，由子类来实现特殊的计算逻辑。
+可以喝抽象工厂一起使用。
+包含的角色
+抽象模板（Abstract Class）
+
+
+模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。
+
+基本方法：是整个算法中的
                         
                     </div>
                     <div class="publish-info">
@@ -500,7 +557,10 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            享元模式目的从工厂的Map中，获取生成过的对象，减少生产对象的开销。
+获取到的对象，对于不同的场景，可能会有些许不同，所以在执行方法时，会输入非享元对象，执行特殊的操作。
+包含的角色
+抽象享元角色：是所有的具体享元类的基类，为具体享元规范需
                         
                     </div>
                     <div class="publish-info">

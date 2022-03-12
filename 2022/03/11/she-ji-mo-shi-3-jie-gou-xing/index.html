@@ -8,7 +8,10 @@
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
-    <meta name="description" content="设计模式3：结构型 | 大白小猪的博客">
+    <meta name="description" content="享元模式目的从工厂的Map中，获取生成过的对象，减少生产对象的开销。
+获取到的对象，对于不同的场景，可能会有些许不同，所以在执行方法时，会输入非享元对象，执行特殊的操作。
+包含的角色
+抽象享元角色：是所有的具体享元类的基类，为具体享元规范需">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -346,7 +349,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    273
                 </div>
                 
 
@@ -364,7 +367,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>从工厂的Map中，获取生成过的对象，减少生产对象的开销。</p>
+<p>获取到的对象，对于不同的场景，可能会有些许不同，所以在执行方法时，会输入非享元对象，执行特殊的操作。</p>
+<h2 id="包含的角色"><a href="#包含的角色" class="headerlink" title="包含的角色"></a>包含的角色</h2><ol>
+<li>抽象享元角色：是所有的具体享元类的基类，为具体享元规范需要实现的公共接口，非享元的外部状态以参数的形式通过方法传入。</li>
+<li>具体享元角色：实现抽象享元角色中所规定的接口。</li>
+<li>非享元角色：是不可以共享的外部状态，它以参数的形式注入具体享元的相关方法中。</li>
+<li>享元工厂角色：负责创建和管理享元角色。当客户对象请求一个享元对象时，享元工厂检査系统中是否存在符合要求的享元对象，如果存在则提供给客户；如果不存在的话，则创建一个新的享元对象。</li>
+</ol>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p><img src="https://dabaixiaozhu.oss-cn-shenzhen.aliyuncs.com/blog/0b252185-2e02-41c7-893e-5d4104e382a3.png" alt></p>
+
             </div>
             <hr />
 
@@ -456,7 +468,15 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            模板方法模式目的将抽象的逻辑抽取出来，由子类来实现特殊的计算逻辑。
+可以喝抽象工厂一起使用。
+包含的角色
+抽象模板（Abstract Class）
+
+
+模板方法：定义了算法的骨架，按某种顺序调用其包含的基本方法。
+
+基本方法：是整个算法中的
                         
                     </div>
                     <div class="publish-info">
